@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursor Hover</title>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col"><img src="gato2.jpg" data-alt-img="gato1.jpg"></div>
+      <div class="col"><img src="gato1.jpg" data-alt-img="gato2.jpg"></div>
+      <div class="col"><img src="gato3.jpg" data-alt-img="gato4.jpg"></div>
+      <div class="col"><img src="gato4.jpg" data-alt-img="gato3.jpg"></div>
+      <div class="col"><img src="gato3.jpg" data-alt-img="gato4.jpg"></div>
+      <div class="col"><img src="gato2.jpg" data-alt-img="gato1.jpg"></div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      var gatoUno = undefined;
+      var gatoDos = undefined;
+
+      $("img").hover(cambia);      
+    });
+
+    function cambia() {
+        var gatoUno = $(this).attr("src");
+        var gatoDos = $(this).attr("data-alt-img");
+        $(this).attr("src", gatoDos);
+        $(this).attr("data-alt-img", gatoUno);
+      }
+  </script>
+</body>
+
+</html>
